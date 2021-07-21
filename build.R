@@ -46,15 +46,16 @@ View(csv)
 
 urls <- data.frame(var=NA, type=NA, url=NA)[numeric(0), ]
 for (i in 1:nrow(csv)){
-  urls <- rbind(urls,data.frame(var = "dc", type = "absolute", url=paste0("https://nlambert.gitpages.huma-num.fr/covidbymonths/absolute/dc/dc_",csv$value[i])))
-  urls <- rbind(urls,data.frame(var = "dc", type = "relative", url=paste0("https://nlambert.gitpages.huma-num.fr/covidbymonths/relative/dc/dc_",csv$value[i])))
-  urls <- rbind(urls,data.frame(var = "rad", type = "absolute", url=paste0("https://nlambert.gitpages.huma-num.fr/covidbymonths/absolute/rad/rad_",csv$value[i])))
-  urls <- rbind(urls,data.frame(var = "rad", type = "relative", url=paste0("https://nlambert.gitpages.huma-num.fr/covidbymonths/relative/rad/rad_",csv$value[i])))
-  urls <- rbind(urls,data.frame(var = "hosp", type = "absolute", url=paste0("https://nlambert.gitpages.huma-num.fr/covidbymonths/absolute/hosp/hosp_",csv$value[i])))
-  urls <- rbind(urls,data.frame(var = "hosp", type = "relative", url=paste0("https://nlambert.gitpages.huma-num.fr/covidbymonths/relative/hosp/hosp_",csv$value[i])))
-  urls <- rbind(urls,data.frame(var = "rea", type = "absolute", url=paste0("https://nlambert.gitpages.huma-num.fr/covidbymonths/absolute/rea/rea_",csv$value[i])))
-  urls <- rbind(urls,data.frame(var = "rea", type = "relative", url=paste0("https://nlambert.gitpages.huma-num.fr/covidbymonths/relative/rea/rea_",csv$value[i])))
-  }
+  urls <- rbind(urls,data.frame(var = "dc", type = "absolute", url=paste0("https://raw.githubusercontent.com/neocarto/covidbymonths/main/maps/absolute/dc/dc_",csv$value[i])))
+  urls <- rbind(urls,data.frame(var = "dc", type = "relative", url=paste0("https://raw.githubusercontent.com/neocarto/covidbymonths/main/maps/relative/dc/dc_",csv$value[i])))
+  urls <- rbind(urls,data.frame(var = "rad", type = "absolute", url=paste0("https://raw.githubusercontent.com/neocarto/covidbymonths/main/maps/absolute/rad/rad_",csv$value[i])))
+  urls <- rbind(urls,data.frame(var = "rad", type = "relative", url=paste0("https://raw.githubusercontent.com/neocarto/covidbymonths/main/maps/relative/rad/rad_",csv$value[i])))
+  urls <- rbind(urls,data.frame(var = "hosp", type = "absolute", url=paste0("https://raw.githubusercontent.com/neocarto/covidbymonths/main/maps/absolute/hosp/hosp_",csv$value[i])))
+  urls <- rbind(urls,data.frame(var = "hosp", type = "relative", url=paste0("https://raw.githubusercontent.com/neocarto/covidbymonths/main/maps/relative/hosp/hosp_",csv$value[i])))
+  urls <- rbind(urls,data.frame(var = "rea", type = "absolute", url=paste0("https://raw.githubusercontent.com/neocarto/covidbymonths/main/maps/absolute/rea/rea_",csv$value[i])))
+  urls <- rbind(urls,data.frame(var = "rea", type = "relative", url=paste0("https://raw.githubusercontent.com/neocarto/covidbymonths/main/maps/relative/rea/rea_",csv$value[i])))
+}
+
 write.csv(urls,"maps/url.csv", row.names = FALSE)
 
 
