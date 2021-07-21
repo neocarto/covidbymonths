@@ -1,0 +1,43 @@
+<style>
+
+.viewof-c { 
+   display: inline-block;
+      padding-left: 10px;
+      padding-right: 25px;
+}
+
+.viewof-a { 
+   display: inline-block;
+   padding-right: 25px;
+}
+
+.viewof-b { 
+   display: inline-block;
+      padding-right: 25px;
+}
+
+
+img {
+  width:100%;
+}
+
+</style>
+
+<div class="viewof-c"><b>Variable à représenter<br/><br/><b/></div>
+<div class="viewof-a"><b>Mode de représentation<br/><br/><b/></div>
+<div class="viewof-b"></div>
+<div class="url"></div>
+<div class="map"></div>
+
+<script type="module">
+import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+import define from "https://api.observablehq.com/d/8deaf60235e6a2d5.js?v=3";
+(new Runtime).module(define, name => {
+  if (name === "viewof c") return Inspector.into(".viewof-c")();
+  if (name === "viewof a") return Inspector.into(".viewof-a")();
+  if (name === "viewof b") return Inspector.into(".viewof-b")();
+  if (name === "url") return Inspector.into(".url")();
+  if (name === "map") return Inspector.into(".map")();
+  return ["urls","maps"].includes(name) || null;
+});
+</script>
