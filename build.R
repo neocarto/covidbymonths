@@ -1,5 +1,9 @@
 # Map update
 
+#devtools::install_github("neocarto/cartogram")
+# devtools::install_github("neocarto/cartogram", force = TRUE)
+
+
 date <- Sys.Date()
 d <- substr(date,9,10)
 m <- substr(date,6,7)
